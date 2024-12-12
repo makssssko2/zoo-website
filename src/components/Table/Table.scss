@@ -1,0 +1,55 @@
+@import '/src/styles/base/mixins';
+.table {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 0 3px var(--green);
+
+  &__row {
+    display: flex;
+    &:not(:last-of-type) {
+      border-bottom: 3px solid var(--green);
+    }
+
+    &_editable {
+      transition: .5s;
+      &:hover {
+        cursor: pointer;
+        background-color: #dadada;
+      }
+    }
+
+    &_head {
+
+    }
+  }
+
+  &__cell {
+    display: flex;
+    padding: 5px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    &:not(:last-of-type) {
+      border-right: 3px solid var(--green);
+    }
+    @include mobile {
+      &:nth-last-of-type(1) {
+        display: none;
+      }
+      &:nth-last-of-type(2) {
+        display: none;
+      }
+      &:nth-last-of-type(3){
+        border: none;
+      }
+    }
+    p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}

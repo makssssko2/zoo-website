@@ -1,0 +1,148 @@
+@import '/src/styles/base/mixins.scss';
+.header {
+  background-color: var(--main-background);
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  height: 15.4vh;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  justify-content: space-between;
+
+  &__logo {
+    position: relative;
+    z-index: 1000;
+    background-color: var(--light-green);
+    width: 163px;
+    height: 40px;
+    border-radius: 30px;
+  }
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+    align-items: center;
+  }
+
+  &-nav {
+    &__left {
+      display: flex;
+      column-gap: 5px;
+      justify-content: space-between;
+      flex-basis: 921px;
+      .active {
+        color: var(--bright-green);
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          bottom: -5px;
+          height: 2px;
+          background-color: var(--light-green);
+        }
+      }
+
+      @include tablet{
+        transform: translateX(-150%);
+        transition: transform .6s ease-out;
+        top: 0;
+        left: 0;
+        position: fixed;
+        z-index: 2;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--green-9opacity);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 40px;
+      }
+    }
+
+    &_active {
+      .header-nav__left {
+        transform: translateX(0);
+      }
+    }
+
+    &__link {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--light-green);
+    }
+    &__profile {
+      position: relative;
+      z-index: 1000;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+
+    &__right {
+      flex-shrink: 0;
+      .profile-icon {
+        height: 35px;
+        width: 35px;
+        fill: var(--light-green);
+      }
+    }
+  }
+}
+
+.burger-menu {
+  width: 30px;
+  height: 25px;
+  display: none;
+  position: relative;
+  z-index: 1000;
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__line, &::after, &::before {
+    width: 100%;
+    height: 4px;
+    border-radius: 50px;
+    background-color: var(--light-green);
+  }
+
+  &__line {
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &::after, &::before {
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    position: absolute;
+    content: '';
+  }
+
+  &::after {
+    bottom: 0;
+  }
+  &::before {
+    top: 0;
+  }
+
+  &_active {
+    .burger-menu__line {
+      opacity: 0;
+    }
+    &::after {
+      transform: rotate(-45deg);
+      top: 50%;
+    }
+    &::before {
+      transform: rotate(45deg);
+      top: 50%;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.selector {
+  width: 100%;
+  .MuiOutlinedInput-root {
+    border-radius: 30px; // Скругленные углы
+    fieldset {
+      box-shadow: 0 0 0 1px var(--gray); // Цвет рамки
+    }
+  }
+
+  .MuiInputBase-input {
+    padding: 10px 20px; // Отступы внутри
+    font-family: "Roboto", sans-serif; // Шрифт (настройте по вашему предпочтению)
+    font-size: 14px; // Размер текста
+    color: gray; // Цвет текста
+  }
+}

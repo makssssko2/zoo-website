@@ -1,0 +1,34 @@
+.title {
+  &_default {
+    color: #000;
+  }
+  &_bright {
+    color: var(--bright-green);
+  }
+  &_light {
+    color: var(--light-green);
+  }
+  &_green {
+    color: var(--green)
+  }
+
+  &_level-1 {
+
+  }
+
+  &_level-2 {
+    font-size: 32px;
+  }
+
+  &_level-3 {
+
+  }
+
+  &_level-4 {
+    font-size: 24px;
+  }
+
+  &_level-5 {
+    font-size: 21px;
+  }
+}

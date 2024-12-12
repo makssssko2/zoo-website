@@ -1,0 +1,52 @@
+@import '/src/styles/base/mixins';
+.ModalWrapper {
+  overflow: hidden;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.11);
+  &__modal {
+    position: relative;
+    margin: 0 5px;
+    overflow: auto;
+    padding: 20px;
+    background-color: #FFF;
+    border-radius: 20px;
+    height: fit-content;
+    flex-basis: 500px;
+    animation: scale .4s;
+    max-height: 100%;
+    max-width:  800px;
+    @include tablet {
+      max-width: 600px;
+    }
+
+
+    @keyframes scale {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(100%);
+      }
+
+    }
+  }
+
+  &__closeBtn {
+    .cross-icon {
+      width: 24px;
+      height: 24px;
+      fill: #000;
+    }
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+}
