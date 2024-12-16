@@ -1,4 +1,4 @@
-import { makeAutoObservable, runInAction } from "mobx";
+import { makeAutoObservable } from "mobx";
 import api from "../services/axios/api.js";
 import {
     ANIMALS_UPDATE
@@ -9,14 +9,23 @@ class AnimalsStore {
         makeAutoObservable(this, {}, { autoBind: true });
     }
 
-    updateAnimals = async ({...props}) => {
-        let response;
+    updateAnimals = async ({...args}) => {
         try {
-            response = await api.put(ANIMALS_UPDATE,{...props});
+            await api.put(ANIMALS_UPDATE,{...args});
         } catch(err) {
             console.error(err);
         }
     }
+
+    deleteAnimal = async (id) => {
+        try {
+            await api.delete(`${ANIMALS_UPDATE}/${id}`);
+        } catch(err) {
+            console.error(err);
+        }
+    }
+
+
 
 
 

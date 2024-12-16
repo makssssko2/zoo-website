@@ -1,7 +1,6 @@
 import Button from "../../components/Button/Button.jsx";
 import Title from "../../components/Title/Title.jsx";
 import CheckupsStore from "../../store/CheckupsStore.js";
-import EnclosuresStore from "../../store/EnclosuresStore.js";
 import Table from "../../components/Table/Table.jsx";
 import {useEffect} from "react";
 import LoaderStore from "../../store/LoaderStore.js";
@@ -16,7 +15,7 @@ const AdminCheckups = () => {
             LoaderStore.showLocalLoader();
             fetch();
         } catch(e) {
-
+            console.log(e);
         } finally {
             LoaderStore.hideLocalLoader();
         }

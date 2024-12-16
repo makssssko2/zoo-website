@@ -1,10 +1,5 @@
 import './Layout.scss';
-const Layout = ({children,...props}) => {
-    const {
-        type,
-        className,
-    } = props;
-
+const Layout = ({type, className, children}) => {
     return (
         <div className={`Layout Layout_${type === 'wide' ? 'wide' : 'thin'} ${className}`}>
             {children}

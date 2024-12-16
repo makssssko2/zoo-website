@@ -1,6 +1,6 @@
 import { makeAutoObservable, runInAction } from "mobx";
 import {
-    API_URL, CHECKUPS_REPORT, ENCLOSURES_REPORT,
+    API_URL,
     TICKET_BUY, TICKET_REPORT,
     TICKET_REPORT_TXT
 } from "../constants/endpoints/endpointConst.js";
@@ -18,7 +18,6 @@ class TicketStore {
     buy = async ({name,ticketType,price = 10}) => {
         let errorMessage;
         let response;
-        const date = new Date();
         try {
             response = await api.post(TICKET_BUY, {name,ticketType,price});
         } catch(err) {
@@ -39,10 +38,6 @@ class TicketStore {
         } catch(err) {
             console.error(err);
         }
-    }
-
-    getInfo = async(ticketId) => {
-
     }
 
     getReportLink = () => {

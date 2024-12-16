@@ -1,4 +1,3 @@
-import React from "react";
 import './Selector.scss';
 import '/src/components/Input/Input.scss';
 import { TextField, MenuItem } from "@mui/material";

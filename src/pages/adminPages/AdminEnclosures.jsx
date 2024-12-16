@@ -16,7 +16,7 @@ const AdminEnclosures = () => {
            LoaderStore.showLocalLoader();
            fetch();
        } catch(e) {
-
+           console.log(e);
        } finally {
            LoaderStore.hideLocalLoader();
        }

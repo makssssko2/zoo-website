@@ -2,7 +2,7 @@ import GlobalLoader from "./components/GlobalLoader.jsx";
 import LocalLoader from "./components/LocalLoader.jsx";
 const Loader = ({...props}) => {
     const {
-        // eslint-disable-next-line react/prop-types
+         
         type
     } = props;
 

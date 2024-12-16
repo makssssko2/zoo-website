@@ -1,19 +1,13 @@
 import {observer} from "mobx-react-lite";
 import Title from "../../components/Title/Title.jsx";
-import {useNavigate} from "react-router-dom";
-import {useState, useEffect} from "react";
+import {Link} from "react-router-dom";
 import LoaderStore from "../../store/LoaderStore.js";
 import AuthStore from "../../store/AuthStore.js";
-import ModalStore from "../../store/ModalStore.js";
 import Input from "../../components/Input/Input.jsx";
 import Paragraph from "../../components/Paragraph/Paragraph.jsx";
 import Button from "../../components/Button/Button.jsx";
-import {description, title, buyTicket} from "../../constants/text/HomePageText.js";
 import {useInput} from "../../hooks/inputHooks.js";
 const RegistrationPage = () => {
-    const [serverResponse,setServerResponse] = useState(null);
-    const navigate = useNavigate();
-
     const login = useInput('',{isEmpty: true,maxLength: 20});
     const password = useInput('',{isEmpty: true, minLength: 8, maxLength: 20});
     const repPassword = useInput('',{isEmpty: true, maxLength: 20, passEqual: password.value});
@@ -27,8 +21,7 @@ const RegistrationPage = () => {
         }
         if(!correctFlag) return;
         LoaderStore.showLocalLoader();
-        const res = await AuthStore.registration({login: inputs.login.value, password: inputs.password.value})
-        setServerResponse(res);
+        await AuthStore.registration({login: inputs.login.value, password: inputs.password.value})
         LoaderStore.hideLocalLoader();
     }
 
@@ -47,6 +40,9 @@ const RegistrationPage = () => {
             <Button type={'main'}>
                 <Title type={'bright'} level={4}>Зарегистрировать</Title>
             </Button>
+            <Link to={'/auth/login'}>
+                <Paragraph type={'default'} level={5}>Есть аккаунт ? Войти</Paragraph>
+            </Link>
         </form>
     )
 }

@@ -143,6 +143,7 @@ const useValid = (value, validations) => {
                 minLengthError ||
                 birthError ||
                 mailError ||
+                fcsError ||
                 passEqualError ||
                 cyrillicError
             )

@@ -1,7 +1,6 @@
 import Button from "../../components/Button/Button.jsx";
 import Title from "../../components/Title/Title.jsx";
 import TicketStore from "../../store/TicketStore.js";
-import EnclosuresStore from "../../store/EnclosuresStore.js";
 import Table from "../../components/Table/Table.jsx";
 import {useEffect} from "react";
 import LoaderStore from "../../store/LoaderStore.js";
@@ -17,7 +16,7 @@ const AdminTickets = () => {
             LoaderStore.showLocalLoader();
             fetch();
         } catch(e) {
-
+            console.log(e);
         } finally {
             LoaderStore.hideLocalLoader();
         }

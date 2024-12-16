@@ -4,6 +4,7 @@ import Layout from "../Layout/Layout.jsx";
 import {useEffect} from "react";
 import AuthStore from "../../store/AuthStore.js";
 import LoaderStore from "../../store/LoaderStore.js";
+import Cross from "../../assets/icons/Base/Cross.jsx";
 const AuthTemplate = () => {
     const navigate = useNavigate();
     useEffect(() => {
@@ -20,6 +21,10 @@ const AuthTemplate = () => {
         (<div className="authTemplate">
             <Layout type='thin' className='authTemplate__container'>
                 <div className="authTemplate__content">
+                    <button className="authTemplate__back" onClick={() => navigate('/')}>
+                        <Cross />
+                    </button>
+
                     <Outlet />
                 </div>
             </Layout>

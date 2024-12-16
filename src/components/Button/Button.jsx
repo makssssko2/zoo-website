@@ -1,5 +1,4 @@
 import './Button.scss';
-import {useState} from "react";
 const Button = ({disabled, style, type, onClick, children}) => {
     return (
         <button

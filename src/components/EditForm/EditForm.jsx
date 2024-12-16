@@ -6,7 +6,6 @@ import Selector from "../Selector/Selector.jsx";
 import Button from "../Button/Button.jsx";
 import Paragraph from "../Paragraph/Paragraph.jsx";
 import LoaderStore from "../../store/LoaderStore.js";
-import {useEffect, useState} from "react";
 import EnclosuresStore from "../../store/EnclosuresStore.js";
 import AnimalStore from "../../store/AnimalStore.js";
 import ModalStore from "../../store/ModalStore.js";
@@ -16,8 +15,9 @@ const EditForm = () => {
     const name =  useInput(item.name,{isEmpty: true});
     const species =  useInput(item.species,{isEmpty: true});
     const birthDate =  useInput(item.dateOfBirth,{isEmpty: true});
+    console.log(JSON.stringify(item))
     const arrivalDate =  useInput(item.arrivalDate,{isEmpty: true});
-    const submitHandler = async (e, inputs) => {
+    const saveHandler = async (e, inputs) => {
         e.preventDefault();
         LoaderStore.showLocalLoader();
 
@@ -38,12 +38,23 @@ const EditForm = () => {
             await EnclosuresStore.getAnimals();
         }
         ModalStore.hideModal();
-        LoaderStore.hideLocalLoader()
+        LoaderStore.hideLocalLoader();
     }
+
+    const deleteHandler = async (e) => {
+        e.preventDefault();
+        LoaderStore.showLocalLoader();
+        await AnimalStore.deleteAnimal(item.id);
+        await EnclosuresStore.getAnimals();
+        ModalStore.hideModal();
+        LoaderStore.hideLocalLoader();
+    }
+
     const enclosuresOptions = EnclosuresStore.enclosures.reduce((acc, item) => {
          acc.push({value: item.id, label: item.description});
          return acc;
-    }, [])
+    }, []);
+
 
     const formFields = (
         <div className="ticketForm__content">
@@ -60,7 +71,7 @@ const EditForm = () => {
     )
     return (
         <form className={'ticketForm'}
-              onSubmit={(e) => submitHandler(e, {item,enclosure,name,species,birthDate,arrivalDate})}>
+              onSubmit={(e) => saveHandler(e, {item,enclosure,name,species,birthDate,arrivalDate})}>
 
             <Title level={2}>Редактировать</Title>
             {formFields}
@@ -75,7 +86,7 @@ const EditForm = () => {
                     type={'sub'}
                     style={'full-width'}
                     holdingOnClick
-                    onClick
+                    onClick={deleteHandler}
                 >
                     <Paragraph level={1} type={'green'}>Удалить</Paragraph>
                 </Button>

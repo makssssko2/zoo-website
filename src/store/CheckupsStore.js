@@ -4,8 +4,6 @@ import {
     API_URL,
     CHECKUPS_REPORT,
     CHECKUPS_REPORT_TXT,
-    ENCLOSURES_REPORT,
-    TICKET_REPORT
 } from "../constants/endpoints/endpointConst.js";
 
 class CheckupsStore {

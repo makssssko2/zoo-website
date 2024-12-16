@@ -2,7 +2,6 @@ import { makeAutoObservable, runInAction } from "mobx";
 import api from "../services/axios/api.js";
 import {
     API_URL,
-    ENCLOSURES_REPORT,
     ANIMALS_GET,
     ENCLOSURES_REPORT_TXT,
     ENCLOSURES_GET
