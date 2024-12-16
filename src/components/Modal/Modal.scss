@@ -16,17 +16,16 @@
     margin: 0 5px;
     overflow: auto;
     padding: 20px;
-    background-color: #FFF;
+    background-color: #fff;
     border-radius: 20px;
     height: fit-content;
     flex-basis: 500px;
-    animation: scale .4s;
+    animation: scale 0.4s;
     max-height: 100%;
-    max-width:  800px;
+    max-width: 800px;
     @include tablet {
       max-width: 600px;
     }
-
 
     @keyframes scale {
       0% {
@@ -35,7 +34,6 @@
       100% {
         transform: scale(100%);
       }
-
     }
   }
 

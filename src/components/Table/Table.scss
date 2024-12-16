@@ -13,7 +13,7 @@
     }
 
     &_editable {
-      transition: .5s;
+      transition: 0.5s;
       &:hover {
         cursor: pointer;
         background-color: #dadada;
@@ -21,7 +21,6 @@
     }
 
     &_head {
-
     }
   }
 
@@ -42,7 +41,7 @@
       &:nth-last-of-type(2) {
         display: none;
       }
-      &:nth-last-of-type(3){
+      &:nth-last-of-type(3) {
         border: none;
       }
     }

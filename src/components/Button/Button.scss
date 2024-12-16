@@ -1,19 +1,19 @@
 .button {
   padding: 10px 24px;
   border-radius: 20px;
-  transition: .2s;
+  transition: 0.2s;
   display: flex;
   justify-content: center;
 
   &_main {
     background-color: var(--green);
-    &:hover{
+    &:hover {
       background-color: var(--green-9opacity);
     }
   }
   &_sub {
     box-shadow: 0 0 2px 0 var(--green);
-    &:hover{
+    &:hover {
       box-shadow: 0 0 3px 1px var(--green);
     }
   }
@@ -24,8 +24,7 @@
     p {
       color: var(--dark-gray);
     }
-    opacity: .6;
+    opacity: 0.6;
     background-color: var(--light-gray);
   }
-
 }

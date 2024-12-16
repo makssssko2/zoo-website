@@ -8,22 +8,22 @@ $breakpoint-3: 768px;
 $breakpoint-4: 570px;
 $breakpoint-5: 430px;
 
-:root{
-    // Without padding container width
-    --container-width: 1020px;
-    // paddings
-    --container-padding: 15px;
-    --default-ff: "Roboto", sans-serif;;
-    --default-fw: 400;
-    --green: rgba(92, 135, 37);
-    --green-9opacity: rgba(92, 135, 37,.9);
-    --light-green: #A7CF73;
-    --bright-green: #CEE7AF;
-    --gray: #9F9D9D;
-    --dark-gray: #616161;
-    --light-gray: #d6d6d6;
-    --main-background: var(--green);
-    --input-error: #DF8F8F;
-    --input-shadow: rgba(122, 154, 238, 0.25);
-    --input-error-shadow: rgb(188, 34, 34);
+:root {
+  // Without padding container width
+  --container-width: 1020px;
+  // paddings
+  --container-padding: 15px;
+  --default-ff: 'Roboto', sans-serif;
+  --default-fw: 400;
+  --green: rgba(92, 135, 37);
+  --green-9opacity: rgba(92, 135, 37, 0.9);
+  --light-green: #a7cf73;
+  --bright-green: #cee7af;
+  --gray: #9f9d9d;
+  --dark-gray: #616161;
+  --light-gray: #d6d6d6;
+  --main-background: var(--green);
+  --input-error: #df8f8f;
+  --input-shadow: rgba(122, 154, 238, 0.25);
+  --input-error-shadow: rgb(188, 34, 34);
 }
